@@ -3,9 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRPNTR</title>
+    <meta name="description" content="Ameen El-Nagar's social media profile. Accountant by day, programmer by night.">
+    <title>My Social Media</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .profile-photo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 80%;
+            text-align: center;
+            cursor: pointer;
+        }
+        .social-links a.facebook { background-color: #3b5998; }
+        .social-links a.twitter { background-color: #1da1f2; }
+        .social-links a.instagram { background-color: #e1306c; }
+        .social-links a.linkedin { background-color: #0077b5; }
+        .social-links a.github { background-color: #333; }
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .social-links a {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, Friend!</h1>
+    <div class="container">
+        <img src="./god.jpg" alt="Ameen El-Nagar's profile photo" class="profile-photo">
+        <h1>Ameen El-Nagar</h1>
+        <p>Accountant By Day | Programmer By Night</p>
+        <div class="social-links">
+            <a href="https://facebook.com/yourprofile" class="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://twitter.com/yourprofile" class="twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://instagram.com/yourprofile" class="instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://linkedin.com/in/yourprofile" class="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/yourprofile" class="github" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </div>
 </body>
 </html>
