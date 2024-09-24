@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ameen El-Nagar's social media profile. Accountant by day, programmer by night.">
     <title>CRPNTR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -56,6 +57,10 @@
         .container:hover {
             transform: scale(1.05);
         }
+        .container:active {
+            transform: scale(1.05); /* Scale effect on touch */
+        }
+
         .profile-photo {
             width: 150px;
             height: 150px;
@@ -69,7 +74,9 @@
         }
         .profile-photo:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+        .profile-photo:active {
+            transform: scale(1.1); /* Scale effect on touch */
         }
         h1 {
             font-size: 2.5rem; /* Increased font size */
@@ -89,7 +96,8 @@
             margin-top: 20px;
         }
         .social-links a {
-            display: inline-block;
+            display: flex;
+            align-items: center; /* Center icon and text vertically */
             margin: 10px 0;
             text-decoration: none;
             font-size: 1.2rem;
@@ -99,6 +107,9 @@
             width: 80%;
             text-align: center;
             color: #fff; /* White text for better contrast */
+        }
+        .social-links a i {
+            margin-right: 8px; /* Space between icon and text */
         }
         .social-links a.facebook { background-color: #4267B2; } /* Facebook */
         .social-links a.twitter { background-color: #1DA1F2; } /* Twitter */
@@ -125,6 +136,14 @@
                 padding: 8px 16px;
             }
         }
+        @media (hover: none) {
+            .container {
+                transition: none; /* Disable scaling effect on mobile */
+            }
+            .profile-photo {
+                transition: none; /* Disable scaling effect on mobile */
+            }
+        }
     </style>
 </head>
 <body>
@@ -135,11 +154,21 @@
         <h1>Ameen El-Nagar</h1>
         <p>Accountant by day | Programmer by night</p>
         <div class="social-links" role="navigation" aria-label="Social Media Links">
-            <a href="https://facebook.com/yourprofile" class="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://twitter.com/yourprofile" class="twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="https://instagram.com/yourprofile" class="instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://linkedin.com/in/yourprofile" class="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/yourprofile" class="github" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://facebook.com/ameencarpenterr" class="facebook" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://twitter.com/ameencarpenter" class="twitter" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
+            <a href="https://instagram.com/ameencarpenter" class="instagram" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://linkedin.com/in/ameencarpenter" class="linkedin" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="https://github.com/ameencarpenter" class="github" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
         </div>
     </div>
 </body>
