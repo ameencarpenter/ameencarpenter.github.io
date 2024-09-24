@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ameen El-Nagar's social media profile. Accountant by day, programmer by night.">
-    <title>My Social Media</title>
+    <title>Ameen El-Nagar - Profile</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background: linear-gradient(to right, #0f2027, #203a4d, #2c5364); /* Darker Gradient */
             color: #fff;
             display: flex;
             justify-content: center;
@@ -17,7 +17,29 @@
             margin: 0;
             padding: 0 20px;
             box-sizing: border-box;
+            position: relative; /* For positioning the background shapes */
+            overflow: hidden; /* Hide overflow for aesthetics */
         }
+
+        /* Decorative Background Elements */
+        .background-shape {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            filter: blur(50px);
+            opacity: 0.5;
+            top: -150px;
+            left: -150px;
+            z-index: 0;
+        }
+
+        .background-shape:nth-child(2) {
+            top: 150px;
+            left: 150px;
+        }
+
         .container {
             text-align: center;
             background-color: rgba(255, 255, 255, 0.1);
@@ -28,6 +50,8 @@
             max-width: 400px;
             width: 100%;
             transition: transform 0.3s ease;
+            position: relative; /* To bring it above the background shapes */
+            z-index: 1;
         }
         .container:hover {
             transform: scale(1.05);
@@ -37,19 +61,21 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #fff;
+            border: 4px solid rgba(255, 255, 255, 0.5);
             margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative; /* To allow for the glow effect */
         }
         .profile-photo:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
         }
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem; /* Increased font size */
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px; /* Spacing for style */
         }
         p {
             font-size: 1.1rem;
@@ -66,23 +92,23 @@
             display: inline-block;
             margin: 10px 0;
             text-decoration: none;
-            color: #fff;
             font-size: 1.2rem;
             padding: 10px 20px;
             border-radius: 25px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             width: 80%;
             text-align: center;
-            cursor: pointer;
+            color: #fff; /* White text for better contrast */
         }
-        .social-links a.facebook { background-color: #3b5998; }
-        .social-links a.twitter { background-color: #1da1f2; }
-        .social-links a.instagram { background-color: #e1306c; }
-        .social-links a.linkedin { background-color: #0077b5; }
-        .social-links a.github { background-color: #333; }
+        .social-links a.facebook { background-color: #4267B2; } /* Facebook */
+        .social-links a.twitter { background-color: #1DA1F2; } /* Twitter */
+        .social-links a.instagram { background-color: #C13584; } /* Instagram */
+        .social-links a.linkedin { background-color: #0077B5; } /* LinkedIn */
+        .social-links a.github { background-color: #181717; } /* GitHub */
         .social-links a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
         }
         @media (max-width: 480px) {
             .container {
@@ -102,11 +128,13 @@
     </style>
 </head>
 <body>
+    <div class="background-shape"></div>
+    <div class="background-shape"></div>
     <div class="container">
         <img src="./god.jpg" alt="Ameen El-Nagar's profile photo" class="profile-photo">
         <h1>Ameen El-Nagar</h1>
-        <p>Accountant By Day | Programmer By Night</p>
-        <div class="social-links">
+        <p>Accountant by day | Programmer by night</p>
+        <div class="social-links" role="navigation" aria-label="Social Media Links">
             <a href="https://facebook.com/yourprofile" class="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
             <a href="https://twitter.com/yourprofile" class="twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
             <a href="https://instagram.com/yourprofile" class="instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
