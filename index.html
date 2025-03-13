@@ -3,75 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Ameen El-Nagar's social media profile. Accountant by day, programmer by night.">
-    <title>CRPNTR</title>
+    <meta name="description" content="Ameen El-Nagar's Data Analyst Portfolio. Passionate about uncovering insights through data.">
+    <title>Ameen El-Nagar | Data Analyst</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="./god_icon.png" type="image/png"> 
+    <link rel="icon" href="./data_icon.png" type="image/png"> 
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #0b0c10, #1f2833, #0b0c10); /* Darker Night Gradient on both sides */
+            background: linear-gradient(to right, #0b0c10, #1f2833, #0b0c10);
             color: #fff;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start;
+            min-height: 100vh;
             margin: 0;
-            padding: 0 20px;
+            padding: 20px;
             box-sizing: border-box;
-            position: relative; /* For positioning the background shapes */
-            overflow: hidden; /* Hide overflow for aesthetics */
-        }
-
-        /* Overlay for a more uniform darkness */
-        body::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
-            z-index: 0; /* Keep it behind the content */
-        }
-
-        /* Decorative Background Elements */
-        .background-shape {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            filter: blur(50px);
-            opacity: 0.2; /* Lower opacity for a more subtle effect */
-            top: -150px;
-            left: -150px;
-            z-index: 0;
-        }
-
-        .background-shape:nth-child(2) {
-            top: 150px;
-            left: 150px;
+            overflow-y: auto;
         }
 
         .container {
             text-align: center;
-            background-color: rgba(30, 30, 30, 0.9); /* Darker background for the container */
+            background-color: rgba(30, 30, 30, 0.9);
             backdrop-filter: blur(15px);
             padding: 30px 50px;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-            max-width: 400px;
+            max-width: 700px;
             width: 100%;
-            transition: transform 0.3s ease;
-            position: relative; /* To bring it above the background shapes */
-            z-index: 1;
-        }
-        .container:hover {
-            transform: scale(1.05);
-        }
-        .container:active {
-            transform: scale(1.05); /* Scale effect on touch */
         }
 
         .profile-photo {
@@ -79,116 +38,262 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.7); /* Lighter border for contrast */
+            border: 4px solid rgba(255, 255, 255, 0.7);
             margin-bottom: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-            position: relative; /* To allow for the glow effect */
         }
-        .profile-photo:hover {
-            transform: scale(1.1);
-        }
-        .profile-photo:active {
-            transform: scale(1.1); /* Scale effect on touch */
-        }
+
         h1 {
-            font-size: 2.5rem; /* Increased font size */
+            font-size: 2.2rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            letter-spacing: 1px; /* Spacing for style */
         }
         p {
             font-size: 1.1rem;
             margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.9); /* Brighter text for readability */
+            color: rgba(255, 255, 255, 0.9);
         }
+        
+        .portfolio-section {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .portfolio-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #66fcf1;
+            padding-bottom: 5px;
+        }
+        .portfolio-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
         .social-links {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
             margin-top: 20px;
         }
         .social-links a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        /* Enhanced Work Experience Items */
+        .content-item {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            margin-left: 20px;
+            border-left: 3px solid #66fcf1;
+            transition: transform 0.3s ease;
+        }
+
+        .content-item:hover {
+            transform: translateX(10px);
+            background: linear-gradient(90deg, rgba(102, 252, 241, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+        }
+
+        .content-item::before {
+            content: '';
+            position: absolute;
+            left: -14px;
+            top: 28px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #1f2833;
+            border: 3px solid #66fcf1;
+            box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+        }
+
+        .content-item strong {
+            display: block;
+            color: #66fcf1;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .position-location {
             display: flex;
-            align-items: center; /* Center icon and text vertically */
-            margin: 10px 0;
+            justify-content: space-between;
+            align-items: center;
+            color: #88d8b0;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .experience-details li {
+            margin: 12px 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            padding-left: 10px;
+            border-left: 2px solid rgba(102, 252, 241, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .experience-details li:hover {
+            border-left-color: #66fcf1;
+        }
+
+        .metric {
+            color: #66fcf1;
+            font-weight: bold;
+            background: rgba(102, 252, 241, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Project Items */
+        .project-item {
+            background: rgba(102, 252, 241, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #66fcf1;
+            box-shadow: 2px 2px 8px rgba(102, 252, 241, 0.1);
+        }
+
+        .project-item a {
+            color: inherit;
             text-decoration: none;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            width: 80%;
-            text-align: center;
-            color: #fff; /* White text for better contrast */
-        }
-        .social-links a i {
-            margin-right: 8px; /* Space between icon and text */
-        }
-        .social-links a.facebook { background-color: #365e91; } /* Darker Facebook */
-        .social-links a.twitter { background-color: #1b8cd1; } /* Darker Twitter */
-        .social-links a.instagram { background-color: #9a2b6c; } /* Darker Instagram */
-        .social-links a.linkedin { background-color: #005582; } /* Darker LinkedIn */
-        .social-links a.github { background-color: #141414; } /* Darker GitHub */
-        .social-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9); /* Stronger shadow on hover */
-            background-color: rgba(255, 255, 255, 0.1); /* Lighten on hover */
+            display: block;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-            .social-links a {
-                font-size: 1rem;
-                padding: 8px 16px;
-            }
+        .project-item a:hover strong {
+            color: #66fcf1;
+            text-decoration: underline;
         }
 
-        @media (hover: none) {
-            .container {
-                transition: none; /* Disable scaling effect on mobile */
-            }
-            .profile-photo {
-                transition: none; /* Disable scaling effect on mobile */
-            }
-            .social-links a:hover {
-                transform: none; /* Disable hover transform on mobile */
-                box-shadow: none; /* Disable hover shadow on mobile */
-                background-color: inherit; /* Maintain original background color */
-            }
+        .plain-list {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        .plain-list li {
+            margin: 8px 0;
+            list-style-type: disc;
+            color: rgba(255, 255, 255, 0.8);
         }
     </style>
 </head>
 <body>
-    <div class="background-shape"></div>
-    <div class="background-shape"></div>
     <div class="container">
-        <img src="./god.jpg" alt="Ameen El-Nagar's profile photo" class="profile-photo">
+        <img src="./ameen.jpg" alt="Ameen El-Nagar's profile photo" class="profile-photo">
         <h1>Ameen El-Nagar</h1>
-        <p>Accountant by day | Programmer by night</p>
-        <div class="social-links" role="navigation" aria-label="Social Media Links">
-            <a href="https://facebook.com/ameencarpenterr" class="facebook" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://twitter.com/ameencarpenter" class="twitter" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-twitter"></i> Twitter
-            </a>
-            <a href="https://instagram.com/ameencarpenter" class="instagram" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="https://linkedin.com/in/ameencarpenter" class="linkedin" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-            <a href="https://github.com/ameencarpenter" class="github" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i> GitHub
-            </a>
+        <p>Data Analyst</p>
+        <p>📍 Dubai, UAE | 📧 <a href="mailto:ameen.elnagar98@gmail.com">ameen.elnagar98@gmail.com</a> | 📞 00971508318790</p>
+        
+        <!-- Work Experience -->
+        <div class="portfolio-section">
+            <h2>Work Experience</h2>
+            
+            <div class="content-item">
+                <strong>Data Analyst - ALFayed</strong>
+                <div class="position-location">
+                    <span>Aswan, Egypt</span>
+                    <span>Dec 2022 - Jan 2025</span>
+                </div>
+                <ul class="experience-details">
+                    <li>Consolidated <span class="metric">10K+ rows</span> of sales data monthly from <span class="metric">3 branches</span> into a structured format, ensuring <span class="metric">99% accuracy</span></li>
+                    <li>Implemented a new reporting system using Excel Pivot Tables, reducing processing time by <span class="metric">50%</span></li>
+                    <li>Generated <span class="metric">50+ monthly financial</span> reports for clients, providing clear insights into sales and profitability</li>
+                    <li>Delivered weekly financial analysis, improving stakeholder decision-making and increasing forecast accuracy by <span class="metric">30%</span></li>
+                </ul>
+            </div>
+
+            <div class="content-item">
+                <strong>Mobile App Developer (Part-Time) - First Academy</strong>
+                <div class="position-location">
+                    <span>Aswan, Egypt</span>
+                    <span>Jan 2024 - Present</span>
+                </div>
+                <ul class="experience-details">
+                    <li>Migrated iOS and Android apps from native development to Flutter, improving maintainability and performance</li>
+                    <li>Designed and implemented a SQL database handling <span class="metric">100K+ records</span>, optimizing data retrieval and analysis speed by <span class="metric">40%</span></li>
+                    <li>Automated data handling processes, reducing manual data entry errors by <span class="metric">95%</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="portfolio-section">
+            <h2>Projects</h2>
+            
+            <div class="project-item">
+                <a href="https://github.com/ameencarpenter/alfayed-sales-jan2023" target="_blank">
+                    <strong>Monthly Sales Dashboard - ALFayed</strong>
+                </a>
+                <p class="position-location">Jan 2023</p>
+                <ul class="experience-details">
+                    <li>Created an interactive <span class="metric">Excel dashboard</span> tracking <span class="metric">10K+</span> sales transactions, enabling real-time monitoring of key performance metrics</li>
+                    <li>Leveraged <span class="metric">Pivot Tables</span> and Charts to analyze <span class="metric">3 sales regions</span>, identifying trends that increased revenue by <span class="metric">15%</span></li>
+                    <li>Implemented dynamic filtering with interactive <span class="metric">dashboard filters and sliders</span>, enhancing user accessibility and reducing data retrieval time by <span class="metric">40%</span></li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/ameencarpenter/cars-sold-in-uae-analysis" target="_blank">
+                    <strong>UAE Car Sales Analysis - Personal Project</strong>
+                </a>
+                <p class="position-location">Jan 2023</p>
+                <ul class="experience-details">
+                    <li>Cleaned and standardized a <span class="metric">7K-row</span> UAE car sales dataset, ensuring <span class="metric">99%</span> data accuracy</li>
+                    <li>Used <span class="metric">SQL joins, subqueries, window functions, and Regular Expressions (REGEX)</span> to analyze sales trends and pricing patterns</li>
+                    <li>Optimized queries for efficient data retrieval and performance on large datasets</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <a href="https://public.tableau.com/app/profile/ameen.el.nagar/viz/AirbnbProject_17417551115040/Dashboard1" target="_blank">
+                    <strong>AirBnB Activity Dashboard - Personal Project</strong>
+                </a>
+                <p class="position-location">Apr 2024</p>
+                <ul class="experience-details">
+                    <li>Built an interactive <span class="metric">Tableau dashboard</span> analyzing <span class="metric">7+ million</span> Airbnb records, uncovering key pricing and demand trends</li>
+                    <li>Cleaned and prepared millions of data points, improving dataset accuracy and visualization clarity</li>
+                    <li>Utilized filters, parameters, and calculated fields to enhance user interactivity and uncover key insights</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="portfolio-section">
+            <h2>Skills</h2>
+            <ul class="plain-list">
+                <li>Excel (VLookup, Conditional Formatting, Pivot Tables)</li>
+                <li>SQL (MySQL, BigQuery)</li>
+                <li>Python (Pandas, NumPy)</li>
+                <li>Tableau</li>
+                <li>Microsoft Power BI</li>
+                <li>Google Sheets</li>
+                <li>Version Control (Git, Github)</li>
+            </ul>
+        </div>
+
+        <!-- Education -->
+        <div class="portfolio-section">
+            <h2>Education</h2>
+            <p><strong>Bachelor of Commerce</strong> - Aswan University - Aswan, Egypt Jun 2021<br>
+            Accounting Department, English Section</p>
+        </div>
+
+        <!-- Languages -->
+        <div class="portfolio-section">
+            <h2>Languages</h2>
+            <ul class="plain-list">
+                <li><strong>English:</strong> Fluent</li>
+                <li><strong>Arabic:</strong> Native</li>
+            </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://linkedin.com/in/ameencarpenter" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/ameencarpenter" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:ameen.elnagar98@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 </body>
